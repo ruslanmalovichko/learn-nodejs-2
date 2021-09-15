@@ -8,8 +8,8 @@ process.stdin.on('readable', function() {
       process.stdout.write(input);
 
       var command = input.trim();
-      if (command == 'exit')
-         process.exit(0);
+      // if (command == 'exit')
+      //    process.exit(0);
 
    }
 });

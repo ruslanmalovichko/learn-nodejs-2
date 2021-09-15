@@ -5,8 +5,9 @@ var interval = setInterval(function(name) {
 var timer = setTimeout(function(interval) {
             clearInterval(interval);
             console.log('cleared timer');
-           }, 30000, interval);
+           // }, 30000, interval);
+           }, 6000, interval);
 
-timer.unref();
+timer.unref(); // will not stop timer because we have an interval
 
 console.log('waiting on first interval...');

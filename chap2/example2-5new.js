@@ -25,6 +25,10 @@ Obj.prototype.doSomething = function(arg1_, callback) {
 
          // block on CPU
          let data = fib(arg1);
+         console.log('Ruslan 1');
+         console.log(arg1);
+         console.log(data);
+         console.log('Ruslan 2');
          callback(null, data);
     });
 }
@@ -44,3 +48,4 @@ test.doSomething(33, function(err,value) {
      else console.log('well, %d', value);
 });
 console.log('called doSomething');
+

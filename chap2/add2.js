@@ -1,5 +1,7 @@
 var base = 2;
 
 function addtwo(input) {
-   return parseInt(input) + base;
+  console.log(input);
+  console.log(base);
+  return parseInt(input) + base;
 }
