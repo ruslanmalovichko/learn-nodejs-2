@@ -4,23 +4,23 @@ client.setEncoding('utf8');
 
 // connect to server 
 client.connect ('8124','localhost', function () {
-   console.log('connected to server'); 
-   client.write('Who needs a browser to communicate?');
+   console.log('connected to server'); // On connection to server
+   client.write('Who needs a browser to communicate?'); // Send this message to server as data
 }); 
 
 // when receive data, send to server 
 process.stdin.on('data', function (data) { 
-   client.write(data); 
+   client.write(data); // Send cli text to server as data
 }); 
 
 // when receive data back, print to console 
 client.on('data',function(data) { 
-   console.log(data); 
+   console.log(data); // When client get answer text with "Repeating: " and print it in cli
 }); 
 
 // when server closed 
 client.on('close',function() { 
-   console.log('connection is closed'); 
+   console.log('connection is closed'); // If server closes, show this message
 });
 
 client.on('error', function(e) {

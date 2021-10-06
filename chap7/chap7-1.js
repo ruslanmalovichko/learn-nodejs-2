@@ -7,3 +7,4 @@ var input = fs.createReadStream('main.txt');
 var output = fs.createWriteStream('mainhash.txt');
 
 input.pipe(hash).pipe(output);
+

@@ -19,6 +19,8 @@ http.createServer(function (req, res) {
          // create and pipe readable stream
          var file = fs.createReadStream(pathname);
 
+         console.log(pathname);
+
          file.on("open", function() {
             res.statusCode = 200;
             file.pipe(res);
@@ -36,3 +38,4 @@ http.createServer(function (req, res) {
 }).listen(8124);
 
 console.log('Server running at 8124');
+

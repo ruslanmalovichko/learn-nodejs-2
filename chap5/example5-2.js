@@ -16,8 +16,10 @@ var options = {
 };
 
 var req = http.request(options, function(res) {
+  console.log('Ruslan 5');
   console.log('STATUS: ' + res.statusCode);
   console.log('HEADERS: ' + JSON.stringify(res.headers));
+  console.log('Ruslan 6');
   res.setEncoding('utf8');
 
   // get data as chunks
@@ -36,5 +38,6 @@ req.on('error', function(e) {
 });
 
 // write data to request body
-req.write(postData);
+req.write(postData); // send request with message
 req.end();
+

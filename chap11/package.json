@@ -1,0 +1,15 @@
+{
+  "name": "chap11",
+  "version": "1.0.0",
+  "description": "## Updates to examples for upcoming Node.js 10 release",
+  "main": "assert.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vows": "^0.8.3"
+  }
+}

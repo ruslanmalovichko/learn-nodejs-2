@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 
-fs.open('./new.txt','a+',0x666, function(err, fd) {
+fs.open('./new.txt','a+',0x666, function(err, fd) { // a+: open for joining. 0x666: access to file
      if (err) return console.error(err);
      fs.write(fd, 'First line', 'utf-8', function(err,written, str) {
         if (err) return console.error(err);
@@ -13,3 +13,4 @@ fs.open('./new.txt','a+',0x666, function(err, fd) {
         });
       });
 });
+

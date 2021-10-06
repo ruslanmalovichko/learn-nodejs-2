@@ -1,0 +1,4 @@
+site.key: site
+
+challenge password: site-pass
+

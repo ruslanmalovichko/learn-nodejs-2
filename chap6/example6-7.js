@@ -23,7 +23,7 @@ rl.on('line', function(cmd) {
       return;
    }
    console.log("repeating command: " + cmd);
-   rl.prompt();
+   // rl.prompt();
 });
 
 rl.on('close', function() {

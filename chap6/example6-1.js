@@ -12,3 +12,4 @@ fs.stat('./phoenix5a.png', function(err,stats) {
    console.log('Others write ' + mode.others.write);
    console.log('Owner read ' + mode.owner.read);
 });
+

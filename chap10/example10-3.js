@@ -12,14 +12,15 @@ var server = net.createServer(function(conn) {
    });
 
    // sixth database is image queue
-   client.select(6);
+   // client.select(6); // Select database
    // listen for incoming data
-   conn.on('data', function(data) {
+   conn.on('data', function(data) { // data: get string text from client
       console.log(data + ' from ' + conn.remoteAddress + ' ' +
         conn.remotePort);
 
       // store data
-      client.rpush('images',data);
+      client.rpush('images', data); // save string to redis database
+      client.lrange('images', 0, -1, redis.print); // get data from database
    });
 
 }).listen(3000);
@@ -28,3 +29,4 @@ server.on('close', function(err) {
 });
 
 console.log('listening on port 3000');
+

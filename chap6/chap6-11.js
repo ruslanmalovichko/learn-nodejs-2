@@ -9,7 +9,6 @@ program
    .option ('-t, --type <mode>', /^(gzip|deflate)$/i)
    .parse(process.argv);
 
-
 var compress;
 if (program.type == 'deflate')
    compress = zlib.createDeflate();
@@ -20,3 +19,4 @@ var inp = fs.createReadStream(program.source);
 var out = fs.createWriteStream(program.file);
 
 inp.pipe(compress).pipe(out);
+

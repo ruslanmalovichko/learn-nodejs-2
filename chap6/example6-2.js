@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-fs.open('./working.txt', 'r+',function (err, fd) {
+fs.open('./working.txt', 'r+',function (err, fd) { // r+: can read and write
    if (err) return console.error(err);
 
    var writable = fs.createWriteStream(null,{fd: fd, start: 10,
@@ -9,3 +9,4 @@ fs.open('./working.txt', 'r+',function (err, fd) {
    writable.write(' inserting this text ');
 
 });
+

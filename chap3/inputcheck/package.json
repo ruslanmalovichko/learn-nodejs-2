@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Looks for and implements commands from input",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "test": "node test/test.js"
   },
@@ -13,3 +16,4 @@
   "author": "Shelley Powers",
   "license": "ISC"
 }
+

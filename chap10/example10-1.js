@@ -1,44 +1,42 @@
-var MongoClient = require('mongodb').MongoClient;
+// var MongoClient = require('mongodb').MongoClient;
 
-// Connect to the db
-MongoClient.connect("mongodb://localhost:27017/exampleDb", 
-                                        function(err, db) {
-   if(err) { return console.error(err); }
+const { MongoClient } = require('mongodb');
+// or as an es module:
+// import { MongoClient } from 'mongodb'
 
-   // access or create widgets collection
-   db.collection('widgets', function(err, collection) {
-      if (err) return console.error(err);
+// Connection URL
+const url = 'mongodb://localhost:27017';
+const client = new MongoClient(url);
 
-      // remove all widgets documents
-      collection.remove(null,{safe : true}, function(err, result) {
-         if (err) return console.error(err);
-         console.log('result of remove ' + result.result);
+// Database Name
+const dbName = 'exampleDb';
 
-         // create two records
-         var widget1 = {title : 'First Great widget',
-                         desc : 'greatest widget of all',
-                         price : 14.99};
-         var widget2 = {title : 'Second Great widget',
-                         desc : 'second greatest widget of all',
-                         price : 29.99};
+async function main() {
+  // Use connect method to connect to the server
+  await client.connect();
+  console.log('Connected successfully to server');
+  const db = client.db(dbName);
+  const collection = await db.collection('widgets');
+  await collection.deleteMany({});
 
-         collection.insertOne(widget1, {w:1}, function (err, result) {
-            if (err) return console.error(err);
-            console.log(result.insertedId);
+  var widget1 = { title : 'First Great widget',
+                  desc : 'greatest widget of all',
+                  price : 14.99 };
+  var widget2 = { title : 'Second Great widget',
+                  desc : 'second greatest widget of all',
+                  price : 29.99 };
 
-            collection.insertOne(widget2, {w:1}, function(err, result) {
-               if (err) return console.error(err);
-               console.log(result.insertedId);
+  await collection.insertOne(widget1, {w:1});
+  await collection.insertOne(widget2, {w:1});
 
-               collection.find({}).toArray(function(err,docs) {
-                  console.log('found documents');
-                  console.dir(docs);
+  var docs = await collection.find({}).toArray();
+  console.dir(docs);
 
-                  //close database
-                  db.close();
-               });
-            });
-        });
-     });
-   });
-});
+  return 'done.';
+}
+
+main()
+  .then(console.log)
+  .catch(console.error)
+  .finally(() => client.close());
+

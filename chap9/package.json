@@ -1,0 +1,15 @@
+{
+  "name": "chap9",
+  "version": "1.0.0",
+  "description": "## Updates to examples for upcoming Node.js 10 release",
+  "main": "chap9-1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.7.2"
+  }
+}

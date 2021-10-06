@@ -2,8 +2,8 @@ var mysql = require('mysql'),
     crypto = require('crypto');
 
 var connection = mysql.createConnection({
-   user: 'username',
-   password: 'userpass'
+   user: 'ruslan',
+   password: 'Mysqlpass!2'
   });
 
 connection.query('USE nodedatabase');

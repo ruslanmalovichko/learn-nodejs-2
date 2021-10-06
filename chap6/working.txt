@@ -1,1 +1,1 @@
-Now let's pull this all together, and read and write with a stream.
+Now let's  inserting this text r, and read and write with a stream.

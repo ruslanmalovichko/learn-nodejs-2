@@ -35,3 +35,4 @@ req.on('error', function(e) {
 // stream gzipped file to server
 var readable = fs.createReadStream('./test.png');
 readable.pipe(gzip).pipe(req);
+

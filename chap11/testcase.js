@@ -6,3 +6,6 @@ describe('MyTest', function() {
     });
   });
 });
+
+// Run test: mocha testcase.js
+

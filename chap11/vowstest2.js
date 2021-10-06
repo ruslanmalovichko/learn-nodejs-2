@@ -19,3 +19,6 @@ suite.addBatch({
         }
     }
 }).run();
+
+// Run: node vowstest2.js
+

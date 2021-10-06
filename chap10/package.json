@@ -1,0 +1,17 @@
+{
+  "name": "chap10",
+  "version": "1.0.0",
+  "description": "## Updates to examples for upcoming Node.js 10 release",
+  "main": "chap10-1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^4.1.2",
+    "redis": "^3.1.2"
+  }
+}

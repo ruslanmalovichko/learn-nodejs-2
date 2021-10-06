@@ -17,13 +17,13 @@ async.parallel({
            callback(err,data);
        });
    },
-
-
-}, function (err, result) {
+}, function (err, result) { // result store data1, data2 and data3
       if (err) {
          console.log(err.message);
       } else {
+         console.log('Ruslan 1');
          console.log(result);
+         console.log('Ruslan 2');
       }
 });
 

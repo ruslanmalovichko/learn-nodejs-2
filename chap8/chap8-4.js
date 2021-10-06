@@ -3,6 +3,9 @@ var execfile = require('child_process').execFile,
 
 child = execfile('./app', function(error, stdout, stderr) {
   if (error == null) {
-    console.log('stdout: ' + stdout);
+    console.log('Ruslan 1');
+    console.log('stdout: ' + stdout); // print result from ./app
+    console.log('Ruslan 2');
   }
 });
+

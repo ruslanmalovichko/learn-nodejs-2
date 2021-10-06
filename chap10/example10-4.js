@@ -16,15 +16,14 @@ messageServer.on('request', function (req, res) {
   // create Redis client
   var client = redis.createClient();
 
-
   client.on('error', function (err) {
     console.log('Error ' + err);
   });
 
   // set database to 6, the image queue
-  client.select(6);
+  // client.select(6);
 
-   client.lpop('images', function(err, reply) {
+   client.lpop('images', function(err, reply) { // Removes and returns the first elements of the list stored at key
       if(err) {
         return console.error('error response ' + err);
       }
@@ -38,9 +37,9 @@ messageServer.on('request', function (req, res) {
       res.end();
    });
    client.quit();
-
 });
 
 messageServer.listen(8124);
 
 console.log('listening on 8124');
+

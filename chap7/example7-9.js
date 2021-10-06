@@ -2,8 +2,8 @@ var mysql = require('mysql'),
     crypto = require('crypto');
 
 var connection = mysql.createConnection({
-   user: 'username',
-   password: 'userpass'
+   user: 'ruslan',
+   password: 'Mysqlpass!2'
   });
 
 connection.query('USE nodedatabase');
@@ -18,6 +18,9 @@ connection.query('SELECT passwordhash, salt FROM user WHERE username = ?',
    var newhash = crypto.createHash('sha512')
                  .update(result[0].salt + password, 'utf8')
                  .digest('hex');
+
+   console.log(newhash);
+   console.log(result[0].passwordhash);
 
    if (result[0].passwordhash === newhash) {
       console.log("OK, you're cool");

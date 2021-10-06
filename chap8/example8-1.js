@@ -4,7 +4,7 @@ var spawn = require('child_process').spawn,
 
 grep.stdout.setEncoding('utf8');
 
-find.stdout.pipe(grep.stdin);
+find.stdout.pipe(grep.stdin); // Result from find sends to grep
 
 // now run grep and output results
 grep.stdout.on('data', function (data) {
@@ -32,3 +32,4 @@ grep.on('exit', function (code) {
     console.log('grep process exited with code ' + code);
   }
 });
+

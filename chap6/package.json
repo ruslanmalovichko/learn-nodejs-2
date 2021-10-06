@@ -1,0 +1,16 @@
+{
+  "name": "chap6",
+  "version": "1.0.0",
+  "description": "## Updates to examples for upcoming Node.js 10 release",
+  "main": "chap6-1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "^3.5.2",
+    "commander": "^8.2.0",
+    "stat-mode": "^1.0.0"
+  }
+}

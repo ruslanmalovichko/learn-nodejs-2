@@ -5,7 +5,7 @@ var watcher = chokidar.watch('.', {
   persistent: true
 });
 
-var log = console.log.bind(console);
+var log = console.log.bind(console); // console.log become log function
 
 watcher
   .on('add', function(path) { log('File', path, 'has been added'); })
@@ -17,5 +17,7 @@ watcher
   .on('raw', function(event, path, details) { log('Raw event info:', event, path, details); });
 
 watcher.on('change', function(path, stats) {
-  if (stats) log('File', path, 'changed size to', stats.size);
+  // if (stats) log('File', path, 'changed size to', stats.size);
+  if (stats) console.log('File', path, 'changed size to', stats.size);
 });
+

@@ -4,20 +4,20 @@ var fs = require('fs');
 const unixsocket = '/tmp/learning.sock';
 
 var server = net.createServer(function(conn) {
-   console.log('connected');
+   console.log('connected'); // on querry from client
 
    conn.on('data', function (data) {
-      conn.write('Repeating: ' + data);
+      conn.write('Repeating: ' + data); // Send data to from file to client as result
    });
 
    conn.on('close', function() {
-        console.log('client closed connection');
+        console.log('client closed connection'); // If client cloced connection, but server runs
    });
 
 }).listen(unixsocket);
 
 server.on('listening', function() {
-    console.log('listening on ' + unixsocket);
+    console.log('listening on ' + unixsocket); // On run server
 });
 
 
@@ -36,3 +36,4 @@ server.on('error',function(err) {
 process.on('uncaughtException', function (err) {
     console.log(err);
 });
+
